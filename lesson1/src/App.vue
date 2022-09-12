@@ -9,6 +9,7 @@
     <header class="header">My personal costs
     </header>
     <main>
+
       <AddPaymentFormVue @add-payment="addPayment" />
       <PaymentsDisplay :paymentsList="paymentsList " show />
     </main>
@@ -35,33 +36,33 @@ export default {
     paymentsList: []
   }),
   methods: {
-    fetchPaymentsData () {
+    fetchPaymentsData() {
       return [
-      {
-          date: '28.03.2020',
-          category: 'Food',
-          value: 169
+        {
+          Date: '28.03.2020',
+          Category: 'Food',
+          Value: 169
         },
         {
-          date: '24.03.2020',
-          category: 'Transport',
-          value: 360
+          Date: '24.03.2020',
+          Category: 'Transport',
+          Value: 360
         },
         {
-          date: '24.03.2020',
-          category: 'Food',
-          value: 532
+          Date: '24.03.2020',
+          Category: 'Food',
+          Value: 532
         }
       ]
     },
-    addPayment (data) {
+    addPayment(data) {
       console.log('App.vue: ', data)
       this.paymentsList.push(data)
     }
-      },
-  created () {
-this.paymentsList = this.fetchPaymentsData()
-    }
+  },
+  created() {
+    this.paymentsList = this.fetchPaymentsData()
+  }
 }
 </script>
 
@@ -73,5 +74,11 @@ this.paymentsList = this.fetchPaymentsData()
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin-bottom: 15px;
 }
 </style>
