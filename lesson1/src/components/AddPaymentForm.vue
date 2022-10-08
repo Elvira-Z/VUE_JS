@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="container">
     <div v-show="show" class="hidden">

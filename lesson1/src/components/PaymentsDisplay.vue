@@ -1,10 +1,11 @@
+/* eslint-disable */
 <template>
     <!--    <div v-if="show">{{ paymentsList}}</div> -->
     <div class="container">
         <table class="table">
             <tr class="headerTable">
                 <th>№</th>
-                <th v-for="(alue, name) in paymentsList[0]">{{ name }}</th>
+                <th v-for="(alue, name) in paymentsList[0]" :key="name">{{ name }}</th>
             </tr>
             <tr v-for="(item, index) in paymentsList" :key="index" class="tableInfo">
                 <th>{{ index+1 }}</th>

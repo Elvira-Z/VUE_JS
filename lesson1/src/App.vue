@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -22,6 +23,7 @@
 import Calc from './components/Calc.vue' */
 import PaymentsDisplay from './components/PaymentsDisplay.vue'
 import AddPaymentFormVue from './components/AddPaymentForm.vue'
+import { mapActions, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -33,10 +35,16 @@ export default {
   },
   data: () => ({
     // show: true
-    paymentsList: []
+    /* paymentsList: [] */
   }),
+  computed: {
+    ...mapGetters(['paymentsList', 'categoryList', 'totalCost'])
+    /* paymentsList() {
+      return this.$store */
+  },
+
   methods: {
-    fetchPaymentsData() {
+    /* fetchPaymentsData() {
       return [
         {
           Date: '28.03.2020',
@@ -54,16 +62,18 @@ export default {
           Value: 532
         }
       ]
-    },
+    } */
     addPayment(data) {
       console.log('App.vue: ', data)
       this.paymentsList.push(data)
     }
   },
   created() {
-    this.paymentsList = this.fetchPaymentsData()
+
+    /* this.paymentsList = this.fetchPaymentsData() */
   }
 }
+
 </script>
 
 <style lang="scss">
